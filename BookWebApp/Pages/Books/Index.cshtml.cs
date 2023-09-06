@@ -2,7 +2,7 @@ using BookWebApp.Data;
 using BookWebApp.Models;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BookWebApp.Pages.Categories;
+namespace BookWebApp.Pages.Books;
 
 
 public class IndexModel : PageModel

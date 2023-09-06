@@ -3,7 +3,7 @@ using BookWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace BookWebApp.Pages.Categories;
+namespace BookWebApp.Pages.Books;
 
 //[BindProperties]
 public class CreateModel : PageModel
@@ -23,9 +23,15 @@ public class CreateModel : PageModel
 
     public async Task<IActionResult> OnPostCreate(Book book)
     {
-        await _db.Books.AddAsync(book);
-        await _db.SaveChangesAsync();
-        return RedirectToPage("Index");
+        if (ModelState.IsValid)
+        {
+            await _db.Books.AddAsync(book);
+            await _db.SaveChangesAsync();
+            return RedirectToPage("Index");
+        }
+
+        return Page();
+
     }
 }
 
