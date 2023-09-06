@@ -1,0 +1,32 @@
+﻿@page
+@model BookWebApp.Pages.Categories.CreateModel
+@{
+}
+
+
+<form method="post" asp-page-handler="Create">
+    <div class="border p-3 mt-4 shadow-sm">
+        <div class="row pb-2">
+            <h2>Create Book</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Book.Title"></label>
+            <input asp-for="Book.Title" class="form-control"/>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Book.Description"></label>
+            <input asp-for="Book.Description" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Book.Quantity"></label>
+            <input asp-for="Book.Quantity" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+
