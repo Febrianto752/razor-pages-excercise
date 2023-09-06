@@ -31,6 +31,7 @@ public class EditModel : PageModel
         {
             _db.Books.Update(Book);
             _db.SaveChanges();
+            TempData["success"] = "Successfully updated book";
             return RedirectToPage("Index");
         }
 

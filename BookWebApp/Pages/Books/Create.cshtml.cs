@@ -32,6 +32,7 @@ public class CreateModel : PageModel
         {
             await _db.Books.AddAsync(Book);
             await _db.SaveChangesAsync();
+            TempData["success"] = "Successfully created book";
             return RedirectToPage("Index");
         }
 

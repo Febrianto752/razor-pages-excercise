@@ -29,13 +29,14 @@ public class DeleteModel : PageModel
         {
             _db.Books.Remove(bookById);
             _db.SaveChanges();
+            TempData["success"] = "Successfully deleted book";
             return RedirectToPage("Index");
         }
         catch (Exception ex)
         {
+            TempData["error"] = "failed deleted book";
             return RedirectToPage("Index");
         }
-
 
     }
 }
