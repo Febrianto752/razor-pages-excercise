@@ -1,10 +1,12 @@
 ﻿@page
-@model BookWebApp.Pages.Books.EditModel
+@model BookWebApp.Pages.Books.DeleteModel
+@{
+}
 
 <form method="post">
     <div class="border p-3 mt-4 shadow-sm">
         <div class="row pb-2">
-            <h2>Edit Book</h2>
+            <h2>Delete Book</h2>
             <hr />
         </div>
 
@@ -13,28 +15,23 @@
         <input type="hidden" asp-for="Book.Id" />
         <div class="mb-3">
             <label asp-for="Book.Title"></label>
-            <input asp-for="Book.Title" class="form-control" />
+            <input asp-for="Book.Title" class="form-control" disabled />
             <span class="text-danger" asp-validation-for="Book.Title"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Book.Description"></label>
-            <input asp-for="Book.Description" class="form-control" />
+            <input asp-for="Book.Description" class="form-control" disabled />
             <span class="text-danger" asp-validation-for="Book.Description"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Book.Quantity"></label>
-            <input asp-for="Book.Quantity" class="form-control" value="@(Model.Book == null? "0": Model.Book.Quantity.ToString())" />
+            <input asp-for="Book.Quantity" class="form-control" disabled />
             <span class="text-danger" asp-validation-for="Book.Quantity"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
         <a asp-page="Index" class="btn btn-outline-secondary">Back to list</a>
     </div>
 </form>
-
-<!-- Jika ingin validation di lakukan di client -->
-@section Scripts{
-    <partial name="_ValidationScriptsPartial" />
-}
