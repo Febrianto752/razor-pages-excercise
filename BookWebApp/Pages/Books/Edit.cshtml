@@ -1,15 +1,18 @@
 ﻿@page
-@model BookWebApp.Pages.Books.CreateModel
+@model BookWebApp.Pages.Books.EditModel
+@{
+}
 
 <form method="post">
     <div class="border p-3 mt-4 shadow-sm">
         <div class="row pb-2">
-            <h2>Create Book</h2>
+            <h2>Edit Book</h2>
             <hr />
         </div>
 
         <div asp-validation-summary="All"></div>
 
+        <input type="hidden" asp-for="Book.Id" />
         <div class="mb-3">
             <label asp-for="Book.Title"></label>
             <input asp-for="Book.Title" class="form-control" />
@@ -18,7 +21,7 @@
 
         <div class="mb-3">
             <label asp-for="Book.Description"></label>
-            <input asp-for="Book.Description" class="form-control"  />
+            <input asp-for="Book.Description" class="form-control" />
             <span class="text-danger" asp-validation-for="Book.Description"></span>
         </div>
 
@@ -28,7 +31,7 @@
             <span class="text-danger" asp-validation-for="Book.Quantity"></span>
         </div>
 
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Update</button>
     </div>
 </form>
 

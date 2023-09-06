@@ -5,33 +5,32 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BookWebApp.Pages.Books;
 
-//[BindProperties]
-public class CreateModel : PageModel
+public class EditModel : PageModel
 {
     private readonly BookDbContext _db;
 
     [BindProperty]
     public Book Book { get; set; }
 
-    public CreateModel(BookDbContext db)
+    public EditModel(BookDbContext db)
     {
         _db = db;
     }
-    public void OnGet()
+    public void OnGet(int id)
     {
-
+        Book = _db.Books.Find(id);
     }
 
-    public async Task<IActionResult> OnPost()
+    public IActionResult OnPost()
     {
         if (Book.Title == Book.Description)
         {
-            ModelState.AddModelError("other", "title and description book cannot be the same");
+            ModelState.AddModelError(string.Empty, "title and description book cannot be the same");
         }
         if (ModelState.IsValid)
         {
-            await _db.Books.AddAsync(Book);
-            await _db.SaveChangesAsync();
+            _db.Books.Update(Book);
+            _db.SaveChanges();
             return RedirectToPage("Index");
         }
 
