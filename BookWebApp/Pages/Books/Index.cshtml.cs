@@ -1,5 +1,6 @@
 using BookWebApp.Data;
 using BookWebApp.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BookWebApp.Pages.Books;
@@ -13,8 +14,9 @@ public class IndexModel : PageModel
     {
         _db = db;
     }
-    public void OnGet()
+    public void OnGet([FromQuery] string? title)
     {
+        Console.WriteLine($"title : {title}");
         Books = _db.Books;
     }
 }
