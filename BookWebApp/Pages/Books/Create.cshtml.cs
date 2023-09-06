@@ -10,7 +10,7 @@ public class CreateModel : PageModel
 {
     private readonly BookDbContext _db;
 
-    //[BindProperty]
+    [BindProperty]
     public Book Book { get; set; }
 
     public CreateModel(BookDbContext db)
@@ -19,19 +19,23 @@ public class CreateModel : PageModel
     }
     public void OnGet()
     {
+
     }
 
-    public async Task<IActionResult> OnPostCreate(Book book)
+    public async Task<IActionResult> OnPostCreate()
     {
+        if (Book.Title == Book.Description)
+        {
+            ModelState.AddModelError("other", "title and description book cannot be the same");
+        }
         if (ModelState.IsValid)
         {
-            await _db.Books.AddAsync(book);
+            await _db.Books.AddAsync(Book);
             await _db.SaveChangesAsync();
             return RedirectToPage("Index");
         }
 
         return Page();
-
     }
 }
 

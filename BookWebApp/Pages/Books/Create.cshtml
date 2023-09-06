@@ -1,6 +1,8 @@
 ﻿@page
 @model BookWebApp.Pages.Books.CreateModel
 @{
+    Console.WriteLine("model book ? ");
+    Console.WriteLine(Model.Book?.Quantity);
 }
 
 
@@ -11,22 +13,31 @@
             <hr />
         </div>
 
+        <div asp-validation-summary="All"></div>
+
         <div class="mb-3">
             <label asp-for="Book.Title"></label>
-            <input asp-for="Book.Title" class="form-control"/>
+            <input asp-for="Book.Title" class="form-control" />
+            <span class="text-danger" asp-validation-for="Book.Title"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Book.Description"></label>
-            <input asp-for="Book.Description" class="form-control" />
+            <input asp-for="Book.Description" class="form-control"  />
+            <span class="text-danger" asp-validation-for="Book.Description"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Book.Quantity"></label>
-            <input asp-for="Book.Quantity" class="form-control" />
+            <input asp-for="Book.Quantity" class="form-control" value="@(Model.Book == null? "0": Model.Book.Quantity.ToString())" />
+            <span class="text-danger" asp-validation-for="Book.Quantity"></span>
         </div>
 
         <button type="submit" class="btn btn-primary">Create</button>
     </div>
 </form>
 
+<!-- Jika ingin validation di lakukan di client -->
+@section Scripts{
+    <partial name="_ValidationScriptsPartial" />
+}

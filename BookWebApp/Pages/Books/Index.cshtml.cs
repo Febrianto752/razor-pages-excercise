@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace BookWebApp.Pages.Books;
 
-
 public class IndexModel : PageModel
 {
     private readonly BookDbContext _db;
