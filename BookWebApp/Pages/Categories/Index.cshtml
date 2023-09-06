@@ -1,0 +1,36 @@
+﻿@page
+@model BookWebApp.Pages.Categories.IndexModel
+
+@{
+}
+
+
+<h1>Book List</h1>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Quantity</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var i = 0;
+        }
+        @foreach (var book in Model.Books)
+        {
+            i++;
+            <tr>
+                <th scope="row">@i</th>
+                <td>@book.Title</td>
+                <td>@book.Description</td>
+                <td>@book.Quantity</td>
+            </tr>
+        }
+       
+        
+    </tbody>
+</table>
