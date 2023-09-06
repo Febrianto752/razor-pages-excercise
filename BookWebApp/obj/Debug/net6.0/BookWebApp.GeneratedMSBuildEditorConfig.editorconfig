@@ -32,6 +32,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/BookTemp/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1RlbXBcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/BookTemp/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1RlbXBcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/BookTemp/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1RlbXBcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/BookTemp/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1RlbXBcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/BookTemp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va1RlbXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Febrianto/Desktop/net/latihan-razor-pages/BookWebApp/BookWebApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
